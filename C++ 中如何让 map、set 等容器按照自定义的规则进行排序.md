@@ -44,7 +44,7 @@ using namespace std;
 
 struct rule
 {
-	bool operator()(string a, string b) const	// 必须加上 const 关键字
+	bool operator()(const string& a, const string& b) const	// 必须加上 const 关键字
     {
 		return a > b;   // 按照字符串由大到小排序
 	}
@@ -90,7 +90,7 @@ typedef struct
 
 struct rule
 {   // s 不等时按照 s 由大到小排序，否则按照 n 由大到小进行排序
-	bool operator()(node a, node b) const	// 必须加上 const 关键字
+	bool operator()(const node& a, const node& b) const	// 必须加上 const 关键字
     {
 		if (a.s != b.s) return a.s > b.s;
         else return a.n > b.n;
