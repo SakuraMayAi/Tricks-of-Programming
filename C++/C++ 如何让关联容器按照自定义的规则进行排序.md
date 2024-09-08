@@ -9,13 +9,13 @@ using namespace std;
 int main()
 {
     map<string, int> mp;
-	mp["a"] = 4;
-	mp["b"] = 3;
-	mp["c"] = 2;
-	mp["d"] = 1;
+    mp["a"] = 4;
+    mp["b"] = 3;
+    mp["c"] = 2;
+    mp["d"] = 1;
 
     for (auto it = mp.cbegin(); it != mp.cend(); ++it)
-		cout << it->first << " " << it->second << endl;
+        cout << it->first << " " << it->second << endl;
 
     return 0;
 }
@@ -44,22 +44,22 @@ using namespace std;
 
 struct rule
 {
-	bool operator()(const string& a, const string& b) const	// 必须加上 const 关键字
+    bool operator()(const string& a, const string& b) const	// 必须加上 const 关键字
     {
-		return a > b;   // 按照字符串由大到小排序
-	}
+        return a > b;   // 按照字符串由大到小排序
+    }
 };
 
 int main()
 {
     map<string, int, rule> mp;
-	mp["a"] = 4;
-	mp["b"] = 3;
-	mp["c"] = 2;
-	mp["d"] = 1;
+    mp["a"] = 4;
+    mp["b"] = 3;
+    mp["c"] = 2;
+    mp["d"] = 1;
 
     for (auto it = mp.cbegin(); it != mp.cend(); ++it)
-		cout << it->first << " " << it->second << endl;
+        cout << it->first << " " << it->second << endl;
 
     return 0;
 }
@@ -90,11 +90,11 @@ typedef struct
 
 struct rule
 {   // s 不等时按照 s 由大到小排序，否则按照 n 由大到小进行排序
-	bool operator()(const node& a, const node& b) const	// 必须加上 const 关键字
+    bool operator()(const node& a, const node& b) const	// 必须加上 const 关键字
     {
-		if (a.s != b.s) return a.s > b.s;
+        if (a.s != b.s) return a.s > b.s;
         else return a.n > b.n;
-	}
+    }
 };
 
 int main()
@@ -118,7 +118,7 @@ int main()
     mp[tmp] = 1;
 
     for (auto it = mp.cbegin(); it != mp.cend(); ++it)
-		cout << it->first.s << " " << it->first.n << endl;
+        cout << it->first.s << " " << it->first.n << endl;
 
     return 0;
 }
@@ -151,16 +151,16 @@ bool cmp(const pair<string, int>& a, const pair<string, int>& b)
 int main()
 {
     map<string, int> mp;
-	mp["a"] = 4;
-	mp["b"] = 3;
-	mp["c"] = 2;
-	mp["d"] = 1;
+    mp["a"] = 4;
+    mp["b"] = 3;
+    mp["c"] = 2;
+    mp["d"] = 1;
 
     vector<pair<string, int>> vec(mp.cbegin(), mp.cend());	// 通过关联容器的迭代器构造vector 对象，注意元素类型一致
     sort(vec.begin(), vec.end(), cmp);
 
     for (auto it = vec.cbegin(); it != vec.cend(); ++it)
-		cout << it->first << " " << it->second << endl;
+        cout << it->first << " " << it->second << endl;
 
     return 0;
 }
