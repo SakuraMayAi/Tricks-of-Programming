@@ -54,4 +54,4 @@ const double pi = 3.1415926;
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 ```
 
-#### 本文可转载，转载请注明出处：[SakuraMayAi：C++ 中 #define 和 const 的区别](https://github.com/SakuraMayAi/Tricks-of-Programming/blob/main/C%2B%2B/C%2B%2B%20%E4%B8%AD%20%23define%20%E5%92%8C%20const%20%E7%9A%84%E5%8C%BA%E5%88%AB)。
+#### 本文可转载，转载请注明出处：[SakuraMayAi：C++ 中 #define 和 const 的区别]([https://github.com/SakuraMayAi/Tricks-of-Programming/blob/main/C%2B%2B/C%2B%2B%20%E4%B8%AD%20%23define%20%E5%92%8C%20const%20%E7%9A%84%E5%8C%BA%E5%88%AB](https://github.com/SakuraMayAi/Tricks-of-Programming/blob/main/C++/C++%20%E4%B8%AD%20%23define%20%E5%92%8C%20const%20%E7%9A%84%E5%8C%BA%E5%88%AB.md))。
