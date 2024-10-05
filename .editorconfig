@@ -1,0 +1,6 @@
+root = true
+
+# all files
+[*]
+indent_mode = spaces
+indent_size = 4
