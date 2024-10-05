@@ -4,3 +4,4 @@ root = true
 [*]
 indent_mode = Spaces
 indent_size = 4
+line_wrap_mode = Soft Wrap
