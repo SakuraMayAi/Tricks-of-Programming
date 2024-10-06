@@ -10,13 +10,13 @@
 
 ![image](https://github.com/user-attachments/assets/cf824a12-df95-4040-b465-16f207e1436c)
 
-# 1.2 .json 文件配置
+## 1.2 .json 文件配置
 这里的 json 文件只是作为我个人的配置，仅供参考使用，并不能适用所有工程。而且配置没有一劳永逸，大部分情况下还是需要根据自己的项目来进行修改，我也在文件中做了部分解释，具体的自行 google。
 
 这里附带一下 VSCode 中 Json 变量的含义，读者可自行前往查看：[Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)。
 
 **注意！所有的路径请参照自己的 mingw 安装的路径进行修改！**
-## 1. c_cpp_properties.json
+### 1.2.1 c_cpp_properties.json
 
 ```js
 {
@@ -35,7 +35,7 @@
     "version": 4
 }
 ```
-## 2. launch.json
+## 1.2.2. launch.json
 
 ```javascript
 {
@@ -67,7 +67,7 @@
     ]
   }
 ```
-## 3. settings.json
+## 1.2.3. settings.json
 
 ```javascript
 {
@@ -172,7 +172,7 @@
     "C_Cpp.errorSquiggles": "disabled"
   }
 ```
-## 4. tasks.json
+## 1.2.4. tasks.json
 
 ```js
 {
