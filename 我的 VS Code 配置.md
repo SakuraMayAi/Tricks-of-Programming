@@ -48,7 +48,7 @@
 
 </details>
 
-## 1.2.2. launch.json
+### 1.2.2. launch.json
 
 <details>
 <summary>点击展开内容</summary>
@@ -86,7 +86,7 @@
     
 </details>
 
-## 1.2.3. settings.json
+### 1.2.3. settings.json
 
 <details>
 <summary>点击展开内容</summary>
@@ -197,7 +197,7 @@
     
 </details>
     
-## 1.2.4. tasks.json
+### 1.2.4. tasks.json
 
 <details>
 <summary>点击展开内容</summary>
@@ -236,7 +236,7 @@
 
 </details>
     
-# 1.3 编译并运行一个 `.cpp` 文件
+## 1.3 编译并运行一个 `.cpp` 文件
 
 <details>
 <summary>点击展开内容</summary>
