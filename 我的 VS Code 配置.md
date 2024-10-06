@@ -2,6 +2,9 @@
 
 ## 1.1 必备插件
 
+<details>
+<summary>点击展开内容</summary>
+
 红框中的四个插件是必备的，安装后可通过上方的 *Run* 运行或调试代码。其中 Code Runner 插件是我比较推荐的**单文件**快速运行插件，安装后可以通过按下 `Crtl + Alt + N` 快捷键（可以更改）快速编译运行单个 `.c` 或 `.cpp` 文件。
 
 ![image](https://github.com/user-attachments/assets/2af119cc-8554-45b8-8104-6b995d345799)
@@ -10,15 +13,22 @@
 
 ![image](https://github.com/user-attachments/assets/cf824a12-df95-4040-b465-16f207e1436c)
 
+</details>
+
 ## 1.2 .json 文件配置
+
 这里的 json 文件只是作为我个人的配置，仅供参考使用，并不能适用所有工程。而且配置没有一劳永逸，大部分情况下还是需要根据自己的项目来进行修改，我也在文件中做了部分解释，具体的自行 google。
 
 这里附带一下 VSCode 中 Json 变量的含义，读者可自行前往查看：[Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)。
 
 **注意！所有的路径请参照自己的 mingw 安装的路径进行修改！**
+
 ### 1.2.1 c_cpp_properties.json
 
-```js
+<details>
+<summary>点击展开内容</summary>
+    
+```javascript
 {
     "configurations": [
       {
@@ -35,8 +45,14 @@
     "version": 4
 }
 ```
+
+</details>
+
 ## 1.2.2. launch.json
 
+<details>
+<summary>点击展开内容</summary>
+    
 ```javascript
 {
     "version": "0.2.0",
@@ -67,8 +83,14 @@
     ]
   }
 ```
+    
+</details>
+
 ## 1.2.3. settings.json
 
+<details>
+<summary>点击展开内容</summary>
+    
 ```javascript
 {
     "files.associations": {
@@ -172,8 +194,14 @@
     "C_Cpp.errorSquiggles": "disabled"
   }
 ```
+    
+</details>
+    
 ## 1.2.4. tasks.json
 
+<details>
+<summary>点击展开内容</summary>
+    
 ```js
 {
     "version": "2.0.0",
@@ -205,7 +233,14 @@
     ]
 }
 ```
+
+</details>
+    
 # 1.3 编译并运行一个 `.cpp` 文件
+
+<details>
+<summary>点击展开内容</summary>
+
 如何安装 VSCode 以及如何安装插件我就不赘述了，读者可以自己搜索一下，这里仅介绍如何创建一个新项目。
 
 新建一个文件夹 `TEST`，右键用 VSCode 打开。
@@ -236,11 +271,16 @@
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/b74aedf8def63d7d4aef40ab0304e23a.png#pic_center)
 
+</details>
+
 # 2 插件推荐
 
 # 3 VS Code 相关设置
 
-## 3.1自动补全括号
+## 3.1 自动补全括号
+
+<details>
+<summary>点击展开内容</summary>
 
 在设置中搜索 `autoClosingBrackets`，然后将 `Editor: Auto Closing Brackets` 选项设置为 `always` 或者 `languageDefined`。该选项控制是否总在添加左括号后补充右括号。
 
@@ -248,7 +288,12 @@
 
 ![image](https://github.com/user-attachments/assets/634265cd-cd8a-4760-8454-9e018766887f)
 
+</details>
+
 ### 自动补全尖括号
+
+<details>
+<summary>点击展开内容</summary>
 
 默认情况下，在你输入左尖括号 `<` 后，并不会补全右尖括号。比如当你想使用 `vector`、`map` 这些模版的时候，你还是希望能自动补上的来快速填入类型的。但是 C++ 的语言配置选项中没有这一项，需要手动修改。
 
@@ -261,3 +306,5 @@
 ![image](https://github.com/user-attachments/assets/3e7c25ce-6296-4998-a46c-ba25b4dbdda0)
 
 其中键 `autoClosingPairs` 后面方括号对儿 `[...]` 里面就指定了可以补全的符号，随便找一个位置添加 `{"open":"<","close":">"}` 就好了，如果放在中间的话别忘记末尾加上英文逗号 `,` 哦。实际上我不是很推荐补全尖括号，因为尖括号用于模版类型出现的概率，要小于输入小于号、左移运算符等情况，这种情况下还自动补全就很头疼了。
+
+</details>
