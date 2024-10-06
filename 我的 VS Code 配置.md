@@ -1,6 +1,8 @@
-# 1 我的插件
+# 1 C++ 编译环境安装
 
-红框中的四个插件是必备的，其中 Code Runner 插件可以在写完一个 `.c` 或 `.cpp` 文件后，按下 `Crtl + Alt + N` 快捷键（可以更改）快速编译运行单个文件。
+## 1.1 必备插件
+
+红框中的四个插件是必备的，安装后可通过上方的 *Run* 运行或调试代码。其中 Code Runner 插件是我比较推荐的**单文件**快速运行插件，安装后可以通过按下 `Crtl + Alt + N` 快捷键（可以更改）快速编译运行单个 `.c` 或 `.cpp` 文件。
 
 ![image](https://github.com/user-attachments/assets/2af119cc-8554-45b8-8104-6b995d345799)
 
@@ -8,7 +10,7 @@
 
 ![image](https://github.com/user-attachments/assets/cf824a12-df95-4040-b465-16f207e1436c)
 
-# 2 .json 文件配置
+# 1.2 .json 文件配置
 这里的 json 文件只是作为我个人的配置，仅供参考使用，并不能适用所有工程。而且配置没有一劳永逸，大部分情况下还是需要根据自己的项目来进行修改，我也在文件中做了部分解释，具体的自行 google。
 
 这里附带一下 VSCode 中 Json 变量的含义，读者可自行前往查看：[Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)。
@@ -203,7 +205,7 @@
     ]
 }
 ```
-# 如何运行
+# 1.3 编译并运行一个 `.cpp` 文件
 如何安装 VSCode 以及如何安装插件我就不赘述了，读者可以自己搜索一下，这里仅介绍如何创建一个新项目。
 
 新建一个文件夹 `TEST`，右键用 VSCode 打开。
@@ -234,10 +236,11 @@
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/b74aedf8def63d7d4aef40ab0304e23a.png#pic_center)
 
+# 2 插件推荐
 
-# VS Code 设置
+# 3 VS Code 相关设置
 
-## 自动补全括号
+## 3.1自动补全括号
 
 在设置中搜索 `autoClosingBrackets`，然后将 `Editor: Auto Closing Brackets` 选项设置为 `always` 或者 `languageDefined`。该选项控制是否总在添加左括号后补充右括号。
 
