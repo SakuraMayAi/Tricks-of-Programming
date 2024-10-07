@@ -1,20 +1,21 @@
-# 1 C++ 编译环境安装
+# 1 必备插件
 
-## 1.1 必备插件
+**注意！要编译 C++ 必须有 mingw 安装包，其安装过程我就不赘述了。** 下载网址：[MinGW-w64 - for 32 and 64 bit Windows Files](https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/)。
 
 红框中的四个插件是必备的，安装后可通过上方的 *Run* 运行或调试代码。
 
 ![image](https://github.com/user-attachments/assets/bfd25a75-90eb-4cf3-b4c1-1a63754ce3df)
 
-## 1.2 .json 文件配置
+# 2 `.json` 文件配置
+
+在下述的配置文件中，请将所有的路径请参照自己 mingw 安装的路径进行修改。
 
 这里的 json 文件只是作为我个人的配置，仅供参考使用，并不能适用所有工程。而且配置没有一劳永逸，大部分情况下还是需要根据自己的项目来进行修改，我也在文件中做了部分解释，具体的自行 google。
 
 这里附带一下 VSCode 中 Json 变量的含义，读者可自行前往查看：[Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)。
 
-**注意！要编译 C++ 必须由 mingw，mingw 安装我就不赘述了。在下述的配置文件中，请将所有的路径请参照自己 mingw 安装的路径进行修改！**
 
-### 1.2.1 c_cpp_properties.json
+### 2.1 c_cpp_properties.json
     
 ```javascript
 {
@@ -34,7 +35,7 @@
 }
 ```
 
-### 1.2.2. launch.json
+### 2.2. launch.json
     
 ```javascript
 {
@@ -67,7 +68,7 @@
   }
 ```
 
-### 1.2.3. settings.json
+### 2.3. settings.json
 
 ```javascript
 {
@@ -173,7 +174,7 @@
   }
 ```
     
-### 1.2.4. tasks.json
+### 2.4. tasks.json
     
 ```js
 {
@@ -207,7 +208,7 @@
 }
 ```
     
-## 1.3 编译并运行一个 `.cpp` 文件
+## 3 编译并运行一个 `.cpp` 文件
 
 如何安装 VSCode 以及如何安装插件我就不赘述了，这里仅介绍如何创建一个新项目。
 
