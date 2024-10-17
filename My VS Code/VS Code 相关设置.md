@@ -1,8 +1,20 @@
+# 单词分隔
+
+在中英文混合时，有时候我想双击选中单词，VSCode 并不会识别中文以及中文的符号，导致它们也一并被选入了，如图所示：
+
+![image](https://github.com/user-attachments/assets/e5f554d6-5942-48ce-947d-de821fd43c0b)
+
+在 VSCode 的设置中，搜索 *Word Separators*，在 *Editor: Word Separator* 一栏中，就是选中单词时会自动识别的分隔符号，填入一些常见的中文符号，就能分隔中英文了：
+
+![image](https://github.com/user-attachments/assets/922aa9c3-88a4-46b3-8acc-bf3da82d9451)
+
+要注意，汉字和字母挨着的时候是无法分隔的。因为我个人比较喜欢在英文单词的前后加空格，所以当我双击选中英文单词时，空格就能帮我分隔掉中文。如果你跟我的习惯不一样，那么设置中文符号间隔就不太够用了。
+
 # 自动补全括号
 
-在设置中搜索 `autoClosingBrackets`，然后将 `Editor: Auto Closing Brackets` 选项设置为 `always` 或者 `languageDefined`。该选项控制是否总在添加左括号后补充右括号。
+在设置中搜索 *autoClosingBrackets*，然后将 *Editor: Auto Closing Brackets* 选项设置为 *always* 或者 *languageDefined*。该选项控制是否总在添加左括号后补充右括号。
 
-其次勾选 `C_Cpp: Autocomplete Add Parentheses`，该选项针对 C++。如果 `Editor: Auto Closing Brackets` 的值为 `true`，那么在 C++ 中自动补全（尤其是函数）后会自动添加上左右括号。
+其次勾选 *C_Cpp: Autocomplete Add Parentheses*，该选项针对 C++。如果 *Editor: Auto Closing Brackets* 的值为 *true*，那么在 C++ 中自动补全（尤其是函数）后会自动添加上左右括号。
 
 ## 自动补全尖括号
 
