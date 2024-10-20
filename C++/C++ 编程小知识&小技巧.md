@@ -1,8 +1,8 @@
 # 1 如何将内存块中的数据拷贝到 `string` 对象中
 
-假设指向内存块的指针为 p，大小是 size，string 对象为 str。
+假设指向内存块的指针为 `p`，大小是 `size`，`string` 对象为 `str`。
 
-## 1.1 遍历逐字符拷贝
+## 1.1 逐字符拷贝
 
 ```cpp
 str.resize(size);
@@ -11,28 +11,28 @@ for (int i = 0; i < size; ++i)
 ```
 ## 1.2 使用 `std::string::data()`
 
-从 C++17 开始，`std::string::data()` 函数返回一个可修改的指针（与 `std::vector` 类似），可以将内容安全地写入 `std::string` 的内部缓冲区。
+从 C++17 开始，通过 `std::string::data()` 函数，可以得到一个指向 `std::string` 的内部缓冲区的**非常量指针**，从而可以将数据安全地写入。
 
 ```cpp
 str.resize(size);
-memcpy(&str[0], p, size);   // 使用 &str[0] 来获取字符串缓冲区的非 const 指针
+memcpy(&str[0], p, size);   // 使用 &str[0] 来获取字符串缓冲区的非常量指针
 ```
 
-注意这里不能使用 `str.c_str()`，它返回的是指向字符串缓冲区的 `const` 指针，不能修改！
+注意这里不能使用 `str.c_str()`，它返回的是 `const` 指针，不能修改！
 
 ## 1.3 使用 `std::string::assign()`
 
-`std::string::assign()` 会自动调整 `str` 的大小，并将指定的**字节块（必须指定起始地址和末尾地址）** 复制到字符串缓冲区中。这种方式比调用 `resize()` 再使用 `memcpy()` 更简洁、安全。
+`std::string::assign()` 会自动调整 `str` 的大小，并将指定的**字节块（必须指定起始地址和末尾地址）** 拷贝到字符串缓冲区中。
 
 ```cpp
-str.assign(p, p + size);
+str.assign(p, p + size);    // 通过起始地址和末尾地址划定字节块
 // 或者
-str.assign(p, size)
+str.assign(p, size)         // 指定起始地址和字节块大小
 ```
 
 ## 1.4 使用 `std::copy()`
 
-该方法也需要指定字节块，并提供 `str` 的迭代器。
+该方法也需要指定字节块，并提供 `str` 的首迭代器。
 
 ```cpp
 str.resize(size);
