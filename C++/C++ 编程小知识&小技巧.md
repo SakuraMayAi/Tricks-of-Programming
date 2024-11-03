@@ -46,3 +46,16 @@ std::copy(p, p + size, str.begin());
 ```cpp
 str.append(p, size);
 ```
+
+# 2 `cout` 怎么打印指针的值
+
+`cout` 不能像 `printf` 一样方便地指定数据的打印格式，而且 `cout` 对 << 运算符进行了重载，所以 `cout` 不能直接打印指针的值。要想打印，需要将指针转换成 `void*` 类型。
+
+```cpp
+// 打印数组地址
+char p[0x10] = { 'a', 'b', 'c' };
+cout << (void*)p;
+// 打印 string 对象地址
+std::string s = "abc";
+cout << &s;
+```
