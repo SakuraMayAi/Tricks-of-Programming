@@ -143,20 +143,19 @@ void Backtracking(int index)    // 在 P[index] 填入一个整数
 {
     if (index == n + 1)		// 递归边界，此时 P 保存了1 ~ n 的一个排列
     {
-		bool flag = true;   // flag = true 表示放置方案是合法的
-		for (int i = 1; i <= n; ++i)	// 枚举第一个皇后的行号
-		{	
+        bool flag = true;   // flag = true 表示放置方案是合法的
+        for (int i = 1; i <= n; ++i)	// 枚举第一个皇后的行号
+        {
             // 注意 j 一定是从 i + 1开始，因为不能使两个皇后在同一行
-			for (int j = i + 1; j <= n; ++j)    // 枚举第二个皇后的行号
-				if (abs(i - j) == abs(P[i] - P[j])) flag = false;   // 在一条对角线上，不满足
-		}
-		if (flag)   // 方案合法
-		{
-			++cnt;  // 计数+1
-			for (int i = 1; i <= n; ++i)// 输出合法方案
-				cout << P[i] << " ";			
-			cout << endl;
-		}
+            for (int j = i + 1; j <= n; ++j)    // 枚举第二个皇后的行号
+                if (abs(i - j) == abs(P[i] - P[j])) flag = false;   // 在一条对角线上，不满足
+        if (flag)   // 方案合法
+        {
+            ++cnt;  // 计数+1
+            for (int i = 1; i <= n; ++i)// 输出合法方案
+                cout << P[i] << " ";			
+            cout << endl;
+        }
         return;
     }
 
@@ -205,7 +204,7 @@ void Backtracking(int index)    // 在 P[index] 填入一个整数（递归处�
 {
     if (index == n + 1) // 能到达递归边界的一定是合法方案
     {
-		++cnt;  // 计数+1
+        ++cnt;  // 计数+1
         for (int i = 1; i <= n; ++i)// 输出合法方案
             cout << P[i] << " ";			
         cout << endl;
@@ -214,7 +213,7 @@ void Backtracking(int index)    // 在 P[index] 填入一个整数（递归处�
     {
         if (used[x] == false) 	// 当前在处理第 index 行，假设要在第 x 行放置一个皇后
         {
-			bool flag = true;   // flag 为 true 表示当前皇后不会和之前的皇后冲突
+            bool flag = true;   // flag 为 true 表示当前皇后不会和之前的皇后冲突
             for (int pre = 1; pre < index; ++pre)	// 枚举第 index 行上面的皇后
             {	// 第 pre 行皇后的列号为 P[pre]，第 index 行皇后的列号为 x
                 if (abs(index - pre) == abs(x - P[pre]))
@@ -223,13 +222,13 @@ void Backtracking(int index)    // 在 P[index] 填入一个整数（递归处�
                     break;
                 }
             }
-			if (flag)	// 当前的放置方案是可行的，继续递归
-			{
-				P[index] = x;       // 在第 index 行第 x 列放置一个皇后
-				used[x] = true; 	// 表明第 x 列已经有皇后了
-				Backtracking(index + 1);    // 递归处理 P[index + 1]
-				used[x] = false; 	// 退出递归，将第 x 列的皇后拿走
-			}
+            if (flag)	// 当前的放置方案是可行的，继续递归
+            {
+                P[index] = x;       // 在第 index 行第 x 列放置一个皇后
+                used[x] = true; 	// 表明第 x 列已经有皇后了
+                Backtracking(index + 1);    // 递归处理 P[index + 1]
+                used[x] = false; 	// 退出递归，将第 x 列的皇后拿走
+            }
         }
     }
 }
@@ -238,7 +237,7 @@ int main()
 {
     cin >> n;
     Backtracking(1);	// 从第一个位置开始填入整数
-	cout << cnt;
+    cout << cnt;
 
     return 0;
 }
@@ -269,7 +268,7 @@ void Backtracking()
     {
         if (!used[x])
         {
-			bool flag = true;
+            bool flag = true;
             for (int pre = 1; pre < (int)P.size(); ++pre)
             {
                 if (abs((int)P.size() - pre) == abs(x - P[pre]))
@@ -278,14 +277,14 @@ void Backtracking()
                     break;
                 }
             }
-			if (flag)
-			{
-				P.push_back(x);
-				used[x] = true;
-				Backtracking();
+            if (flag)
+            {
+                P.push_back(x);
+                used[x] = true;
+                Backtracking();
                 P.pop_back();
-				used[x] = false;
-			}
+                used[x] = false;
+            }
         }
     }
 }
@@ -294,12 +293,7 @@ int main()
 {
     cin >> n;
     Backtracking();	// 从第一个位置开始填入整数
-	cout << cnt;
-
-    return 0;
-}
-```
-    cout << ans;
+    cout << cnt;
 
     return 0;
 }
