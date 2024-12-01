@@ -346,32 +346,3 @@ int min(int a, int b)
 每一层优先级从上往下逐步递减，同一层符号优先级在表的右侧。
 
 ![alt text](image.png)
-
-| 数字（同时也是下标） | 二进制 | 1的个数 | 规律 |
-|:-:|:-:|:-:|:-:|
-| 0 | 0 | 0 |
-| 1 | 1 | 1 |
-| <font color=Red>2 | <font color=Red>10 | <font color=Red>1 | [0]=0 + 1 |
-| <font color=Red>3 | <font color=Red>11 | <font color=Red>2 | [1]=1 + 1 |
-| <font color=Blue>4 | <font color=Blue>100 | <font color=Blue>1 | [0]=0 + 1 |
-| <font color=Blue>5 | <font color=Blue>101 | <font color=Blue>2 | [1]=1 + 1 |
-| <font color=Blue>6 | <font color=Blue>110 | <font color=Blue>2 | [2]=1 + 1 |
-| <font color=Blue>7 | <font color=Blue>111 | <font color=Blue>3 | [3]=2 + 1 |
-| <font color=Green>8 | <font color=Green>1000 | <font color=Green>1 | [0]=0 + 1 |
-| <font color=Green>9 | <font color=Green>1001 | <font color=Green>2 | [1]=1 + 1 |
-| <font color=Green>10 | <font color=Green>1010 | <font color=Green>2 | [2]=1 + 1 |
-| <font color=Green>11 | <font color=Green>1011 | <font color=Green>3 | [3]=2 + 1 |
-| <font color=Green>12 | <font color=Green>1100 | <font color=Green>2 | [4]=1 + 1 |
-| <font color=Green>13 | <font color=Green>1101 | <font color=Green>3 | [5]=2 + 1 |
-| <font color=Green>14 | <font color=Green>1110 | <font color=Green>3 | [6]=2 + 1 |
-| <font color=Green>15 | <font color=Green>1111 | <font color=Green>4 | [7]=3 + 1 |
-
-观察表中可以验证，对于 $n$ 位二进制，其可以表示 $2^n$ 个数。在规律那一栏中, $[x]=y$ 表示下标 $x$ 处表示的二进制中1的个数为 $y$。
-
-通过观察可以发现，当二进制为 `11` 时，其相当于在二进制 `1` 的基础上，在高位补了个1。所以其1的个数为 `[1]:1 + 1 = 2`，而二进制 `11` 的下标为3，下标差为2。
-
-再观察可以发现，当二进制为 `111` 时，其相当于在二进制 `11` 的基础上，在高位补了个1。所以其1的个数为 `[3]:2 + 1 = 3`，而二进制 `111` 的下标为7，下标差为4。
-
-再观察可以发现，当二进制为 `1111` 时，其相当于在二进制 `111` 的基础上，在高位补了个1。所以其1的个数为 `[7]:3 + 1 = 4`，而二进制 `1111` 的下标为15，下标差为8。
-
-由此可以知道，下标 $x$ 处二进制1的个数，等于下标 $x - 2^n$ 处二进制1的个数 + 1, $n$ 是二进制的位数。因此我们需要维护一个步长 `step`，来表示 $2^n$。step 应当是2的次幂，那在什么时间点给它乘以2呢？当下标等于 `step` 的下一个值时，我们就可以将其乘以2，来保证 $x - 2^n$ 又从0开始。
