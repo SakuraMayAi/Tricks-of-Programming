@@ -345,4 +345,4 @@ int min(int a, int b)
 
 每一层优先级从上往下逐步递减，同一层符号优先级在表的右侧。
 
-![alt text](image.png)
+![alt text](./img/运算符优先级表.png)
