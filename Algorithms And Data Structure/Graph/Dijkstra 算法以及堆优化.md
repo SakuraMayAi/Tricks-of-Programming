@@ -53,7 +53,7 @@ int Dijkstra(const vector<vector<int>>& graph, int start, int end)
         for (int v = 0; v < n; ++v)
         {   
             // v 没有选取，且 (u, v) 之间有边，且源点和 v 的最短距离相较于之前更小
-            if (!pick[v] && graph[u][v] != 0 && d[u] + graph[u][v] < d[v])
+            if (pick[v] == false && graph[u][v] != 0 && d[u] + graph[u][v] < d[v])
                 d[v] = d[u] + graph[u][v];  // 更新源点到 e.to 的最短距离
         }
     }
@@ -134,7 +134,7 @@ int Dijkstra(const vector<list<Edge>>& edges, int start, int end)
         for (const Edge& e : edges[dest])   // 遍历以 dest 为起点的所有边
         {
             // 节点 e.to 没有选取，且源点到 dest 的最短距离 + 边 (dest, e.to) 的距离 < 源点到 e.to 的最短距离
-            if (!pick[e.to] && d[dest] + e.val < d[e.to])  
+            if (pick[e.to] == false && d[dest] + e.val < d[e.to])  
             {
                 d[e.to] = d[dest] + e.val;  // 更新源点到 e.to 的最短距离
                 // 将终点为 e.to，最短距离为 d[e.to] 的新最短路径加入小顶堆维护
